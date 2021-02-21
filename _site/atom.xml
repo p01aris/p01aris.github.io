@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>Zheng’s Blog</title>
+ <link href="http://127.0.0.1:4000//atom.xml" rel="self"/>
+ <link href="http://127.0.0.1:4000//"/>
+ <updated>2021-02-21T10:10:26+08:00</updated>
+ <id>http://127.0.0.1:4000/</id>
+ <author>
+   <name>Zheng,Lu</name>
+   <email>lz0ace@hotmail.com</email>
+ </author>
+
+ 
+ <entry>
+   <title>Linux zfs configuarion</title>
+   <link href="http://127.0.0.1:4000//2018/09/01/Linux-zfs-configuration/"/>
+   <updated>2018-09-01T00:00:00+08:00</updated>
+   <id>http://127.0.0.1:4000//2018/09/01/Linux-zfs-configuration</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/public/assets/file_Fabien_Barral.jpg&quot; alt=&quot;My helpful screenshot&quot; /&gt;
+For each pool you want automatically mounted by the zfs daemon execute:&lt;/p&gt;
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;zpool &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;cachefile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/etc/zfs/zpool.cache &amp;lt;poolname&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Enable the service so it is automatically started at boot time:&lt;/p&gt;
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;systemctl &lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;zfs.target
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;To manually start the daemon:&lt;/p&gt;
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;systemctl start zfs.target
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Note: If zfs-mount.service fails on boot due to running before the kernel module is loaded, you may have to manually enable the zfs-import-cache.service.&lt;/p&gt;
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;systemctl &lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;zfs-import-cache.service
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</content>
+ </entry>
+ 
+
+</feed>
