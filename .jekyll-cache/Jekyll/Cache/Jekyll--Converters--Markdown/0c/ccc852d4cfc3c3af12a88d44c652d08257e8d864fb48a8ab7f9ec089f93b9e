@@ -1,14 +1,14 @@
-I"<p><img src="/public/assets/file_Fabien_Barral.jpg" alt="My helpful screenshot" />
+I"<p><img src="/public/assets/file_Fabien_Barral.jpg" alt="My helpful screenshot" />
 For each pool you want automatically mounted by the zfs daemon execute:</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span>zpool <span class="nb">set </span><span class="nv">cachefile</span><span class="o">=</span>/etc/zfs/zpool.cache &lt;poolname&gt;
-</code></pre></div></div>
+<pre><code class="language-console">$zpool set cachefile=/etc/zfs/zpool.cache &lt;poolname&gt;
+</code></pre>
 <p>Enable the service so it is automatically started at boot time:</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span>systemctl <span class="nb">enable </span>zfs.target
-</code></pre></div></div>
+<pre><code class="language-console">$systemctl enable zfs.target
+</code></pre>
 <p>To manually start the daemon:</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span>systemctl start zfs.target
-</code></pre></div></div>
+<pre><code class="language-console">$systemctl start zfs.target
+</code></pre>
 <p>Note: If zfs-mount.service fails on boot due to running before the kernel module is loaded, you may have to manually enable the zfs-import-cache.service.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span>systemctl <span class="nb">enable </span>zfs-import-cache.service
-</code></pre></div></div>
+<pre><code class="language-console">$systemctl enable zfs-import-cache.service
+</code></pre>
 :ET

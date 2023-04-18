@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Zheng’s Blog</title>
- <link href="http://127.0.0.1:4000//atom.xml" rel="self"/>
- <link href="http://127.0.0.1:4000//"/>
- <updated>2021-02-21T10:10:26+08:00</updated>
- <id>http://127.0.0.1:4000/</id>
+ <link href="http://localhost:4000/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/"/>
+ <updated>2023-04-18T11:09:24+08:00</updated>
+ <id>http://localhost:4000</id>
  <author>
    <name>Zheng,Lu</name>
    <email>lz0ace@hotmail.com</email>
@@ -14,22 +14,530 @@
  
  <entry>
    <title>Linux zfs configuarion</title>
-   <link href="http://127.0.0.1:4000//2018/09/01/Linux-zfs-configuration/"/>
+   <link href="http://localhost:4000/2018/09/01/Linux-zfs-configuration/"/>
    <updated>2018-09-01T00:00:00+08:00</updated>
-   <id>http://127.0.0.1:4000//2018/09/01/Linux-zfs-configuration</id>
+   <id>http://localhost:4000/2018/09/01/Linux-zfs-configuration</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/public/assets/file_Fabien_Barral.jpg&quot; alt=&quot;My helpful screenshot&quot; /&gt;
 For each pool you want automatically mounted by the zfs daemon execute:&lt;/p&gt;
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;zpool &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;cachefile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/etc/zfs/zpool.cache &amp;lt;poolname&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-console&quot;&gt;$zpool set cachefile=/etc/zfs/zpool.cache &amp;lt;poolname&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Enable the service so it is automatically started at boot time:&lt;/p&gt;
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;systemctl &lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;zfs.target
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-console&quot;&gt;$systemctl enable zfs.target
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;To manually start the daemon:&lt;/p&gt;
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;systemctl start zfs.target
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-console&quot;&gt;$systemctl start zfs.target
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Note: If zfs-mount.service fails on boot due to running before the kernel module is loaded, you may have to manually enable the zfs-import-cache.service.&lt;/p&gt;
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;systemctl &lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;zfs-import-cache.service
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-console&quot;&gt;$systemctl enable zfs-import-cache.service
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Linux zfs configuarion</title>
+   <link href="http://localhost:4000/2018/06/13/Markdown-With-Latex/"/>
+   <updated>2018-06-13T00:00:00+08:00</updated>
+   <id>http://localhost:4000/2018/06/13/Markdown-With-Latex</id>
+   <content type="html">&lt;h1 id=&quot;markdown-note&quot;&gt;Markdown Note&lt;/h1&gt;
+
+&lt;p&gt;&lt;em&gt;Italic&lt;/em&gt; and &lt;strong&gt;Bold&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;Scratched Text&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;superscript^2^&lt;/p&gt;
+
+&lt;h1 id=&quot;show-pic&quot;&gt;#Show Pic&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;![Hello World](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAUCAAAAAAVAxSkAAABrUlEQVQ4y+3TPUvDQBgH8OdDOGa+oUMgk2MpdHIIgpSUiqC0OKirgxYX8QVFRQRpBRF8KShqLbgIYkUEteCgFVuqUEVxEIkvJFhae3m8S2KbSkcFBw9yHP88+eXucgH8kQZ/jSm4VDaIy9RKCpKac9NKgU4uEJNwhHhK3qvPBVO8rxRWmFXPF+NSM1KVMbwriAMwhDgVcrxeMZm85GR0PhvGJAAmyozJsbsxgNEir4iEjIK0SYqGd8sOR3rJAGN2BCEkOxhxMhpd8Mk0CXtZacxi1hr20mI/rzgnxayoidevcGuHXTC/q6QuYSMt1jC+gBIiMg12v2vb5NlklChiWnhmFZpwvxDGzuUzV8kOg+N8UUvNBp64vy9q3UN7gDXhwWLY2nMC3zRDibfsY7wjEkY79CdMZhrxSqqzxf4ZRPXwzWJirMicDa5KwiPeARygHXKNMQHEy3rMopDR20XNZGbJzUtrwDC/KshlLDWyqdmhxZzCsdYmf2fWZPoxCEDyfIvdtNQH0PRkH6Q51g8rFO3Qzxh2LbItcDCOpmuOsV7ntNaERe3v/lP/zO8yn4N+yNPrekmPAAAAAElFTkSuQmCC)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;latex&quot;&gt;LaTeX&lt;/h2&gt;
+
+&lt;p&gt;Upmath converts LaTeX equations in double-dollars &lt;code&gt;$$&lt;/code&gt;: \(ax^2+bx+c=0\). All equations are rendered as block equations. If you need inline ones, you can add the prefix &lt;code&gt;\inline&lt;/code&gt;: \inline \(\inline p={1\over q}\). Place big equations on separate lines:&lt;/p&gt;
+
+\[x_{1,2} = {-b\pm\sqrt{b^{2*3} - 4ac} \over 2a}.\]
+
+&lt;p&gt;In this case the LaTeX syntax will be highlighted in the source code. You can even add equation numbers (unfortunately there is no automatic numbering and refs support):&lt;/p&gt;
+
+&lt;p&gt;\(\|\vec{A}\|=\sqrt{A_x^2 + A_y^2 + A_z^2}.\) (1)&lt;/p&gt;
+
+&lt;p&gt;It is possible to write Cyrillic symbols in &lt;code&gt;\text&lt;/code&gt; command: \(Q_\text{плавления}&amp;gt;0\).&lt;/p&gt;
+
+&lt;p&gt;One can use matrices:&lt;/p&gt;
+
+\[T^{\mu\nu}=\begin{pmatrix}
+\varepsilon&amp;amp;0&amp;amp;0&amp;amp;0\\
+0&amp;amp;\varepsilon/3&amp;amp;0&amp;amp;0\\
+0&amp;amp;0&amp;amp;\varepsilon/3&amp;amp;0\\
+0&amp;amp;0&amp;amp;0&amp;amp;\varepsilon/3
+\end{pmatrix},\]
+
+&lt;p&gt;integrals:&lt;/p&gt;
+
+\[P_\omega={n_\omega\over 2}\hbar\omega\,{1+R\over 1-v^2}\int\limits_{-1}^{1}dx\,(x-v)|x-v|,\]
+
+&lt;ul&gt;
+  &lt;li&gt;
+\[\pi \approx 3.14159\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[\pm \, 0.2\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[\dfrac{0}{1} \neq \infty\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[0 &amp;lt; x &amp;lt; 1\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[0 \leq x \leq 1\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[x \geq 10\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[\forall \, x \in (1,2)\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[\exists \, x \notin [0,1]\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[A \subset B\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[A \subseteq B\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[A \cup B\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[A \cap B\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[X \implies Y\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[X \impliedby Y\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[a \to b\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[a \longrightarrow b\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[a \Rightarrow b\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[a \Longrightarrow b\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[a \propto b\]
+  &lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;- $$\pi \approx 3.14159$$
+- $$\pm \, 0.2$$
+- $$\dfrac{0}{1} \neq \infty$$
+- $$0 &amp;lt; x &amp;lt; 1$$
+- $$0 \leq x \leq 1$$
+- $$x \geq 10$$
+- $$\forall \, x \in (1,2)$$
+- $$\exists \, x \notin [0,1]$$
+- $$A \subset B$$
+- $$A \subseteq B$$
+- $$A \cup B$$
+- $$A \cap B$$
+- $$X \implies Y$$
+- $$X \impliedby Y$$
+- $$a \to b$$
+- $$a \longrightarrow b$$
+- $$a \Rightarrow b$$
+- $$a \Longrightarrow b$$
+- $$a \propto b$$
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;- $$\bar a$$
+- $$\bar a$$
+- $$\tilde a$$
+- $$\breve a$$
+- $$\hat a$$
+- $$a^ \prime$$
+- $$a^ \dagger$$
+- $$a^ \ast$$
+- $$a^ \star$$
+- $$\mathcal A$$
+- $$\mathrm a$$
+- $$\cdots$$
+- $$\vdots$$
+- $$\#$$
+- $$\$$$
+- $$\%$$
+- $$\&amp;amp;$$
+- $$\{ \}$$
+- $$\_$$
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+\[\bar a\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[\tilde a\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[\breve a\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[\hat a\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[a^ \prime\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[a^ \dagger\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[a^ \ast\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[a^ \star\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[\mathcal A\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[\mathrm a\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[\cdots\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[\vdots\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[\#\]
+  &lt;/li&gt;
+  &lt;li&gt;\(\\)$&lt;/li&gt;
+  &lt;li&gt;
+\[\%\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[\&amp;amp;\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[\{ \}\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[\_\]
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;$\alpha$&lt;/th&gt;
+      &lt;th&gt;&lt;code&gt;A&lt;/code&gt;&lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;\beta&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;B&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;\gamma&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\Gamma&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;\delta&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\Delta&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;\epsilon&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;E&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\varepsilon&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;\zeta&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;Z&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;\eta&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;H&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;\theta&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\Theta&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\vartheta&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;\zeta&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;I&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;\kappa&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;K&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\varkappa&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;\lambda&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\Lambda&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;\mu&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;M&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;\nu&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;N&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;\xi&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\Xi&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;\omicron&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;O&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;\pi&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\Pi&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\varpi&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;\rho&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;P&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\varrho&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;\sigma&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\Sigma&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\varsigma&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;\tau&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;T&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;\upsilon&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\Upsilon&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;\phi&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\Phi&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\varphi&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;\chi&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;X&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;\psi&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\Psi&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;\omega&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\Omega&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\alpha\)&lt;/td&gt;
+      &lt;td&gt;\(A\)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\beta\)&lt;/td&gt;
+      &lt;td&gt;\(B\)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\gamma\)&lt;/td&gt;
+      &lt;td&gt;\(\Gamma\)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\delta\)&lt;/td&gt;
+      &lt;td&gt;\(\Delta\)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\epsilon\)&lt;/td&gt;
+      &lt;td&gt;\(E\)&lt;/td&gt;
+      &lt;td&gt;\(\varepsilon\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\zeta\)&lt;/td&gt;
+      &lt;td&gt;\(Z\)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\eta\)&lt;/td&gt;
+      &lt;td&gt;\(H\)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\theta\)&lt;/td&gt;
+      &lt;td&gt;\(\Theta\)&lt;/td&gt;
+      &lt;td&gt;\(\vartheta\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\zeta\)&lt;/td&gt;
+      &lt;td&gt;\(I\)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\kappa\)&lt;/td&gt;
+      &lt;td&gt;\(K\)&lt;/td&gt;
+      &lt;td&gt;\(\varkappa\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\lambda\)&lt;/td&gt;
+      &lt;td&gt;\(\Lambda\)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\mu\)&lt;/td&gt;
+      &lt;td&gt;\(M\)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\nu\)&lt;/td&gt;
+      &lt;td&gt;\(N\)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\xi\)&lt;/td&gt;
+      &lt;td&gt;\(\Xi\)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\omicron\)&lt;/td&gt;
+      &lt;td&gt;\(O\)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\pi\)&lt;/td&gt;
+      &lt;td&gt;\(\Pi\)&lt;/td&gt;
+      &lt;td&gt;\(\varpi\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\rho\)&lt;/td&gt;
+      &lt;td&gt;\(P\)&lt;/td&gt;
+      &lt;td&gt;\(\varrho\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\sigma\)&lt;/td&gt;
+      &lt;td&gt;\(\Sigma\)&lt;/td&gt;
+      &lt;td&gt;\(\varsigma\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\tau\)&lt;/td&gt;
+      &lt;td&gt;\(T\)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\upsilon\)&lt;/td&gt;
+      &lt;td&gt;\(\Upsilon\)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\phi\)&lt;/td&gt;
+      &lt;td&gt;\(\Phi\)&lt;/td&gt;
+      &lt;td&gt;\(\varphi\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\chi\)&lt;/td&gt;
+      &lt;td&gt;\(X\)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\psi\)&lt;/td&gt;
+      &lt;td&gt;\(\Psi\)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\omega\)&lt;/td&gt;
+      &lt;td&gt;\(\Omega\)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;cool tikz-pictures:&lt;/p&gt;
+
+\[\usetikzlibrary{decorations.pathmorphing}
+\begin{tikzpicture}[line width=0.2mm,scale=1.0545]\small
+\tikzset{&amp;gt;=stealth}
+\tikzset{snake it/.style={-&amp;gt;,semithick,
+decoration={snake,amplitude=.3mm,segment length=2.5mm,post length=0.9mm},decorate}}
+\def\h{3}
+\def\d{0.2}
+\def\ww{1.4}
+\def\w{1+\ww}
+\def\p{1.5}
+\def\r{0.7}
+\coordinate[label=below:$A_1$] (A1) at (\ww,\p);
+\coordinate[label=above:$B_1$] (B1) at (\ww,\p+\h);
+\coordinate[label=below:$A_2$] (A2) at (\w,\p);
+\coordinate[label=above:$B_2$] (B2) at (\w,\p+\h);
+\coordinate[label=left:$C$] (C1) at (0,0);
+\coordinate[label=left:$D$] (D) at (0,\h);
+\draw[fill=blue!14](A2)--(B2)-- ++(\d,0)-- ++(0,-\h)--cycle;
+\draw[gray,thin](C1)-- +(\w+\d,0);
+\draw[dashed,gray,fill=blue!5](A1)-- (B1)-- ++(\d,0)-- ++(0,-\h)-- cycle;
+\draw[dashed,line width=0.14mm](A1)--(C1)--(D)--(B1);
+\draw[snake it](C1)--(A2) node[pos=0.6,below] {$c\Delta t$};
+\draw[-&amp;gt;,semithick](\ww,\p+0.44*\h)-- +(\w-\ww,0) node[pos=0.6,above] {$v\Delta t$};
+\draw[snake it](D)--(B2);
+\draw[thin](\r,0) arc (0:atan2(\p,\w):\r) node[midway,right,yshift=0.06cm] {$\theta$};
+\draw[opacity=0](-0.40,-0.14)-- ++(0,5.06);
+\end{tikzpicture}\]
+
+&lt;p&gt;plots:&lt;/p&gt;
+
+\[\begin{tikzpicture}[scale=1.0544]\small
+\begin{axis}[axis line style=gray,
+    samples=120,
+    width=9.0cm,height=6.4cm,
+    xmin=-1.5, xmax=1.5,
+    ymin=0, ymax=1.8,
+    restrict y to domain=-0.2:2,
+    ytick={1},
+    xtick={-1,1},
+    axis equal,
+    axis x line=center,
+    axis y line=center,
+    xlabel=$x$,ylabel=$y$]
+\addplot[red,domain=-2:1,semithick]{exp(x)};
+\addplot[black]{x+1};
+\addplot[] coordinates {(1,1.5)} node{$y=x+1$};
+\addplot[red] coordinates {(-1,0.6)} node{$y=e^x$};
+\path (axis cs:0,0) node [anchor=north west,yshift=-0.07cm] {0};
+\end{axis}
+\end{tikzpicture}\]
 </content>
  </entry>
  
